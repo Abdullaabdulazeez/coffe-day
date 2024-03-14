@@ -1,0 +1,126 @@
+$myColor: #DC4348;
+$fontsize: 19px;
+@mixin butt {
+    padding: 8px 35px 8px 35px;
+    border-radius: 15px;
+    font-size: 10px;
+    border: none;
+    color: $myColor;
+    border: 1px solid #FBEDED;
+}
+@mixin flex{
+    display: flex;
+    align-items: center;
+}
+@mixin border{
+    border-bottom: 1px solid rgb(92, 92, 92);
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 30px;
+ 
+}
+@mixin img{
+    width: 40px;
+    height: 40px;
+    border-radius: 33%;
+}
+body{
+    font-family: "Didact Gothic", sans-serif;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+.head{
+    background-color: white;
+    @include flex();
+    justify-content: space-evenly;
+    color: $myColor;
+    position: fixed;
+    width: 100%;
+    font-size: $fontsize;
+    margin-bottom: 15px;
+}
+.head {
+    span:nth-of-type(4){
+        border-bottom: 2px solid $myColor;
+    }
+}
+.head>div>i{
+    margin-left: 20px;
+}
+.head>div>i:nth-of-type(1){
+    margin-left: 80px;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);;
+}
+main{
+    div:nth-of-type(1){
+        margin-top: 80px;
+        background-image: url(https://www.cafecoffeeday.com/sites/all/themes/ccd/assets/images/store-locator/storelocator-desktop.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        width: 125%;
+    }
+}
+main{
+    div:nth-of-type(2){
+        margin-top: 80px;
+       background-color: $myColor;
+       margin-left: 150px;
+       color: white;
+       text-align: center;
+    }
+    h1{
+        margin-top: 100px;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 14px;
+        padding: 7px
+    }
+    button{
+        @include butt();
+    }
+    button:nth-of-type(2){
+        @include butt();
+        background-color: $myColor;
+        color: #FBEDED;
+        margin-top: 10px;
+    }
+}
+.social{
+    @include flex();
+    height: auto;
+    gap: 3%;
+    justify-content: center;
+    @include border();
+}
+.social>img{
+    @include img();
+}
+.list{
+    @include flex();
+    gap:4%;
+    @include border();
+    opacity: 0.5;
+    ul>li{
+        list-style: none;
+        font-size: 13px;
+        margin: 5px;
+    }
+}
+.copy{
+    margin-left: 7%;
+    margin-right: 7%;
+    opacity: 0.5;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.talk>img{
+    width: 80px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
